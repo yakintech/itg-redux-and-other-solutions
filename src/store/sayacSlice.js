@@ -10,10 +10,10 @@ export const sayacSlice = createSlice({
     name: 'sayac',
     initialState: initialState,
     reducers: {
-        arttir: (state) => {
+        arttir: (state) => { //  sayac/arttir
             state.value = state.value + 1
         },
-        azalt: (state) => {
+        azalt: (state) => { //    sayac/azalt
             state.value = state.value - 1
         },
         degerleArttir: (state, action) => {
@@ -22,5 +22,6 @@ export const sayacSlice = createSlice({
     }
 })
 
+export const {arttir, azalt, degerleArttir } = sayacSlice.actions
 
 export default sayacSlice.reducer
