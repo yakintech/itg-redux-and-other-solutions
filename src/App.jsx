@@ -9,6 +9,7 @@ import Products from './pages/Products'
 import Cart from './pages/Cart'
 import { CartContext } from './context/CartContext'
 import Anasayfa from './pages/Anasayfa'
+import Urunler from './pages/Urunler'
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
 
   let isLogin = false;
 
-  return <Anasayfa/>
+  return <Urunler/>
 
   return (<>
     {

@@ -7,12 +7,14 @@ import { CartProvider } from './context/CartContext';
 import sayacReducer from './store/sayacSlice';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
+import favoritesReducer from './store/favoritesSlice';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const store = configureStore({
   reducer: {
-    sayac: sayacReducer
+    sayac: sayacReducer,
+    favorites : favoritesReducer
   }
 })
 
