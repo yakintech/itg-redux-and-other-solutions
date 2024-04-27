@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    var myPromise = new Promise(function (resolve, reject) {
+        try {
+            //operasyon-1
+            //operasyon-1
+            var date = new Date();
+
+            // if saturday or sunday
+            if (date.getDay() === 0 || date.getDay() === 6) {
+                reject("Haftasonu"); // catch BLOĞU!!!
+            }
+            else {
+                setTimeout(() => {
+                    resolve("Hafta içi");
+                }, 2000);
+            }
+        } catch (error) {
+            reject(error)
+        }
+    })
+
+    //pending, reject, fullFilled
+    console.log(myPromise);
+
+
+    myPromise
+        .then(res => {
+            console.log(res);
+           // throw err
+        })
+        .catch(err => {
+            console.log(err);
+         
+        })
+        .finally(() => {
+            console.log('Bu kod her zaman çalışacak');
+        })
+
+</script>
+
+</html>

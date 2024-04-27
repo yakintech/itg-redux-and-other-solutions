@@ -1,0 +1,28 @@
+npm install eslint --save-dev
+npm install eslint-plugin-react --save-dev
+npx eslint --init
+
+
+
+// .eslintrc.js
+module.exports = {
+  overrides: [
+    {
+      files: ["src/components/**"],
+      rules: {
+        // Burada src/components dizini için özel kurallar tanımlayabilirsiniz
+      }
+    },
+    {
+      files: ["src/core/**"],
+      rules: {
+        "no-restricted-imports": ["error", {
+          "paths": [{
+            "name": "@material-ui/core",
+            "message": "Material-UI cannot be used in the core directory."
+          }]
+        }]
+      }
+    }
+  ]
+};

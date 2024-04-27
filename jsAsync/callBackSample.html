@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    //js callback, promise, async-await
+
+    //Bu fonksiyon dışarıdan 3 parametre alıyor. Aldığı 3. parametre bir fonksiyon.
+    function calc(x, y, z) {
+
+        var result = x + y;
+        result = result * 1.2;
+        //işlemler...
+        //işlemler...
+        z(result)
+    }
+
+
+    // calc(3,5,print)
+    calc(3, 5, function (data) {
+        console.log(data)
+    })
+
+
+
+    function print(data) {
+        console.log(data)
+    }
+
+
+    let cities = ["İstanbul", "İzmir", "Ankara", "Aydın", "Trabzon", "Diyarbakır"]
+
+    cities.map(getCity)
+
+    function getCity(item, key) {
+        console.log(item);
+    }
+
+    cities.forEach(function(item){
+        console.log("ITEM: ", item);
+    })
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let myResponse = fetch("https://northwind.ercel.app/api/products")
+
+    // myResponse
+    //     .then(res => {
+    //         console.log(res);
+    //     })
+
+    let myResponse2 = fetch("https://northwind.vercel.app/api/orders")
+
+    //İki request DE tamamlandığında bir kod çalıştırmak istiyorum.
+
+    let myPromises = Promise.all([myResponse, myResponse2])
+
+    myPromises.then(res => {
+        console.log("PROMISE ALL ", res);
+    })
+        .catch(err => {
+            console.log("ERROR-1", err);
+        })
+
+
+
+    let myPromises2 = Promise.allSettled([myResponse, myResponse2])
+
+
+    myPromises2.then(res => {
+        console.log("PROMISE allSettled ", res);
+    })
+        .catch(err => {
+            console.log("ERROR-2", err);
+        })
+
+
+
+
+
+</script>
+
+</html>
