@@ -8,12 +8,15 @@ import Contact from './pages/Contact'
 import Products from './pages/Products'
 import Cart from './pages/Cart'
 import { CartContext } from './context/CartContext'
+import Anasayfa from './pages/Anasayfa'
 
 function App() {
 
   const { cart } = useContext(CartContext)
 
   let isLogin = false;
+
+  return <Anasayfa/>
 
   return (<>
     {
